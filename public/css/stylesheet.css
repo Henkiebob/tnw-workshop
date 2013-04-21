@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+body {
+	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+	background: #F4F4F4 url('../img/bodybg.png') repeat left top;
+	color: #404040;
+}
+
+a:link, a:visited {
+	color: #0088CC;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+}
+
+h1 {
+	margin: 0 0 12px;
+	font-size: 2em;
+}
+
+p {
+	margin: 0 0 10px;
+	line-height: 150%;
+}
+
+ul {
+	margin: 0;
+	line-height: 150%;
+}
+
+li {
+	margin: 0 0 0 20px;
+	padding: 0;
+	list-style: disc;
+}
+
+
+label {
+	display: inline-block;
+	width: 100px;
+}
+
+div.messages {
+	margin: 0 0 20px;
+}
+
+div.messages p {
+	margin: 5px 0;
+	padding: 5px 10px;
+	background-color: #E5E5E5;
+}
+
+.textfield {
+	border: 1px solid #CCC;
+	background-color: #FFF5CC;
+	border-right: none;
+	margin: 0;
+	padding: 8px 10px;
+	width: 500px;
+	outline: none
+}
+
+.btn, a.btn {
+	display: inline-block;
+	background-color: #004A7F;
+	border: none;
+	color: #FFF;
+	padding: 10px 25px;
+	margin: 0;
+	text-decoration: none;
+	cursor: pointer;
+	vertical-align: top;
+	font: 12px Verdana, Geneva, sans-serif
+}
+
+.btn:hover, a.btn:hover {
+	background-color: #0F5E96;
+}
+
+div#container {
+	width: 800px;
+	margin: 20px auto;
+	-webkit-box-shadow: 0px 0px 5px 5px rgba(100, 100, 100, 0.2);
+	box-shadow: 0px 0px 5px 5px rgba(100, 100, 100, 0.2);
+}
+
+div#header {
+	background-color: #004A7F;
+	line-height: 50px;
+	padding: 0 20px;
+	font-size: 2em;
+	color: #FFF;
+}
+
+div#content {
+	background-color: #FFF;
+	padding: 20px;
+	overflow: hidden;
+	min-height: 200px;
+}
