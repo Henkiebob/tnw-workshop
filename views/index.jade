@@ -2,13 +2,9 @@ extends layout
 
 block content
 	div.messages
-		p Hello
-		p Anyone here?
-		p Yes, i'm here!
-		p Nice, thought I was alone :'(
-		p Oh thats great enzo
-		p Well see you later
-		p Goodbye!
-	form(method='post')
-		input(type='text', value='Hello everyone!', class='textfield')
+		div
+			p.bold Welkom op de chat!
+
+	form(method='post', class='form')
+		input(type='text', value='', placeholder='Type your message..', class='textfield')
 		input(type='submit', value='Send', class='btn')
