@@ -53,6 +53,7 @@ io.sockets.on('connection', function(socket) {
 		// Strip the HTML tags
 		var message = data.message.replace(/<(?:.|\n)*?>/gm, '');
 
+		// Set the currentdate
 		var curDate = new Date();
 		var timestamp = curDate.getHours() + ':' + curDate.getMinutes();
 
