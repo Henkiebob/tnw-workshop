@@ -11,7 +11,7 @@ $.fn.scrollToBottom = function(duration) {
 
 		el.scrollTop = delta * fraction + startPosition;
 
-		if(fraction < 1) {
+		if (fraction < 1) {
 			setTimeout(scroll, 10);
 		}
 	}

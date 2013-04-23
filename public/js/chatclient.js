@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	
 	// Set the focus to the textfield.
 	$('.textfield').focus();
 

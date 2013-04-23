@@ -6,11 +6,19 @@ An example chat application used to demonstrate the functionalities of Node.js c
 
 ### On Windows:
 1. Install Node.js from www.nodejs.org
-2. npm install -g nodemon
+2. In the commandline: npm install -g nodemon
+
 
 ### On Mac OSX:
 1. Install Node.js from www.nodejs.org
-2. sudo npm install -g nodemon
+2. In the terminal: sudo npm install -g nodemon
+
+
+### Check if Node.js and NPM are installed:
+1. Open up the terminal of commandline
+2. Run the command: node -v
+3. Run the command: npm -v
+4. Both of these commands should return a version number
 
 
 ## Running the application
@@ -21,3 +29,24 @@ An example chat application used to demonstrate the functionalities of Node.js c
 5. Start the server by running: nodemon app.js
 6. Check if the server is running by pointing your webbrowser to http://localhost:1337
 
+
+
+## A nice cheatsheet for Socket.io
+
+	// send to current request socket client
+	socket.emit('message', "this is a test");
+
+	// sending to all clients, include sender
+	io.sockets.emit('message', "this is a test");
+
+	// sending to all clients except sender
+	socket.broadcast.emit('message', "this is a test");
+
+	// sending to all clients in 'game' room(channel) except sender
+	socket.broadcast.to('game').emit('message', 'nice game');
+
+	 // sending to all clients in 'game' room(channel), include sender
+	io.sockets.in('game').emit('message', 'cool game');
+
+	// sending to individual socketid
+	io.sockets.socket(socketid).emit('message', 'for your eyes only');
