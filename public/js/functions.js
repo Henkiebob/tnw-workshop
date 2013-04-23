@@ -1,26 +1,19 @@
-$(document).ready(function() {
-	// Set the focus to the textfield.
-	$('.textfield').focus();
+$.fn.scrollToBottom = function(duration) {
+	var $el = this;
+	var el  = $el[0];
+	var startPosition = el.scrollTop;
+	var delta = el.scrollHeight - $el.height() - startPosition;
 
-	// Check if the form has been submitted
-	$('form').submit(function(e){
+	var startTime = Date.now();
 
-		// Prevent the form from being submitted
-		e.preventDefault();
+	function scroll() {
+		var fraction = Math.min(1, (Date.now() - startTime) / duration);
 
-		// Get the text from the textfield
-		var text = $('.textfield').val();
+		el.scrollTop = delta * fraction + startPosition;
 
-		// Empty the textfield
-		$('.textfield').val('');
-
-		// Append the inserted text to the div
-		$('.messages > div').append('<p>'+text+'</p>');
-
-		// Scroll the window to the bottom
-		$('.messages').scrollToBottom(100);
-
-		// Set the focus to the textfield.
-		$('.textfield').focus();
-	});
-});
+		if(fraction < 1) {
+			setTimeout(scroll, 10);
+		}
+	}
+	scroll();
+};

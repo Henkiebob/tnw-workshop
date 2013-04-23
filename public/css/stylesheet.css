@@ -1,21 +1,15 @@
 * {
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
+	margin: 0; padding: 0; vertical-align: baseline;
 }
 
 body {
 	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	font-size: 13px;
-	margin: 0;
-	padding: 0;
-	background-color: #F4F4F4;
-	color: #404040;
+	font-size: 13px; margin: 0; padding: 0;
+	background-color: #F4F4F4; color: #404040;
 }
 
 a:link, a:visited {
-	color: #0088CC;
-	text-decoration: none;
+	color: #0088CC; text-decoration: none;
 }
 
 a:hover, a:active {
@@ -23,91 +17,81 @@ a:hover, a:active {
 }
 
 h1 {
-	margin: 0 0 12px;
-	font-size: 2em;
+	margin: 0 0 12px; font-size: 2em;
 }
 
 p {
-	margin: 0 0 10px;
-	line-height: 150%;
+	margin: 0 0 10px; line-height: 150%;
 }
 
 ul {
-	margin: 0;
-	line-height: 150%;
+	margin: 0; line-height: 150%;
 }
 
 li {
-	margin: 0 0 0 20px;
-	padding: 0;
-	list-style: disc;
+	margin: 0 0 0 20px;	padding: 0;	list-style: disc;
 }
 
 div#container {
-	width: 700px;
-	margin: 20px auto;
+	width: 700px; margin: 20px auto;
 	-webkit-box-shadow: 0px 0px 5px 5px rgba(100, 100, 100, 0.2);
 	box-shadow: 0px 0px 5px 5px rgba(100, 100, 100, 0.2);
 }
 
 div#header {
-	background-color: #004A7F;
-	line-height: 50px;
-	padding: 0 20px;
-	font-size: 2em;
-	color: #FFF;
+	background-color: #004A7F; line-height: 50px;
+	padding: 0 20px; font-size: 2em; color: #FFF;
 }
 
 div#content {
-	background-color: #FFF;
-	padding: 20px;
-	overflow: hidden;
-	min-height: 200px;
+	background-color: #FFF; padding: 20px;
+	overflow: hidden; min-height: 200px;
 }
 
 div.messages {
-	margin: 0 0 10px;
-	height: 300px;
-	overflow-y: scroll;
+	margin: 0 0 10px; height: 300px; overflow-y: scroll;
 }
 
-div.messages > div {
-
-}
+div.messages > div {}
 
 div.messages p {
-	margin: 5px 10px 5px 0;
-	padding: 5px 10px;
-	background-color: #E5E5E5;
-	color: #004A7F;
+	margin: 5px 10px 5px 0; padding: 5px 10px; 
+	background-color: #E5E5E5; color: #004A7F;
+}
+
+div.messages p > span {
+	color: #808080;
 }
 
 .form {
 	margin: 0;
 }
 
-.textfield {
-	border: 1px solid #CCC;
-	background-color: #FFF5CC;
-	border-right: none;
-	margin: 0;
-	padding: 8px 10px;
-	width: 500px;
+.textfield, .btn {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	vertical-align: middle;
 	outline: none;
-	color: #404040;
+	line-height: normal;
+	display: inline-block;
+}
+
+.textfield {
+	width: 500px;
+	padding: 8px 10px; margin: 0;
+	background-color: #FFF5CC;
+	border: 1px solid #CCC;
+	border-right: none;
+	color: #004A7F;
 }
 
 .btn, a.btn {
-	display: inline-block;
+	padding: 8px 25px; margin: 0;
+	border: 1px solid #004A7F;
 	background-color: #004A7F;
-	border: none;
-	color: #FFF;
-	padding: 10px 25px;
-	margin: 0;
 	text-decoration: none;
+	color: #FFF;
 	cursor: pointer;
-	vertical-align: top;
-	font: 12px Verdana, Geneva, sans-serif
 }
 
 .btn:hover, a.btn:hover {

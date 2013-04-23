@@ -2,8 +2,7 @@
 var express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),
-	io = require('socket.io').listen(server),
-	chat = require('./routes/chat');
+	io = require('socket.io').listen(server);
 
 // Let the app listen op port 1337
 server.listen(1337);
@@ -36,5 +35,30 @@ app.configure(function() {
 });
 
 // Todo index page (homepage)
-app.get('/', chat.index);
+app.get('/', function(req, res) {
+	res.render('index');
+});
+
+// Contains all clients
+var clients = {};
+
+io.sockets.on('connection', function(socket) {
+
+	// Add the client to the list of clients
+	clients[socket.id] = socket;
+
+	// A user has clicked on the link
+	socket.on('msg', function(data) {
+
+		// Strip the HTML tags
+		var message = data.message.replace(/<(?:.|\n)*?>/gm, '');
+
+		var curDate = new Date();
+		var timestamp = curDate.getHours() + ':' + curDate.getMinutes();
+
+		// Send back a message
+		io.sockets.emit('newMessage', { 'message': message, 'timestamp': timestamp });
+	});
+});
+
 
