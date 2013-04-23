@@ -34,19 +34,19 @@ An example chat application used to demonstrate the functionalities of Node.js c
 ## A nice cheatsheet for Socket.io
 
 	// send to current request socket client
-	socket.emit('message', "this is a test");
+	socket.emit('newMessage', "you are connected");
 
 	// sending to all clients, include sender
-	io.sockets.emit('message', "this is a test");
+	io.sockets.emit('newMessage', "this is a test");
 
 	// sending to all clients except sender
-	socket.broadcast.emit('message', "this is a test");
+	socket.broadcast.emit('newMessage', "a new user connected");
 
 	// sending to all clients in 'game' room(channel) except sender
-	socket.broadcast.to('game').emit('message', 'nice game');
+	socket.broadcast.to('game').emit('newMessage', 'a new user joined the game room');
 
 	 // sending to all clients in 'game' room(channel), include sender
-	io.sockets.in('game').emit('message', 'cool game');
+	io.sockets.in('game').emit('newMessage', 'hello gamers');
 
 	// sending to individual socketid
-	io.sockets.socket(socketid).emit('message', 'for your eyes only');
+	io.sockets.socket(socketid).emit('newMessage', 'only for you lady');
