@@ -73,11 +73,14 @@ io.sockets.on('connection', function(socket) {
 		// Strip the HTML tags
 		var message = data.message.replace(/<(?:.|\n)*?>/gm, '');
 
-		// Send back a message
-		io.sockets.emit('newMessage', {
-			'message': message,
-			'timestamp': getTimestamp()
-		});
+		if (message.length > 1 && message.length < 500) {
+			// Send back a message
+			io.sockets.emit('newMessage', {
+				'message': message,
+				'timestamp': getTimestamp()
+			});
+		}
+		
 	});
 
 });
